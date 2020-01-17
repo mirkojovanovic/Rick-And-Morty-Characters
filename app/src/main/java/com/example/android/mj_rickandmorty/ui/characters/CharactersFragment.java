@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import androidx.appcompat.widget.SearchView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -54,7 +55,45 @@ public class CharactersFragment extends Fragment {
         charactersRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(),
                 LinearLayoutManager.VERTICAL, false));
 
+
+        getCharacters();
+
+        SearchView searchView = getView().findViewById(R.id.search_characters_search_view);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                getCharacters(query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                //getCharacters(newText);
+                return false;
+            }
+        });
+    }
+
+    private void getCharacters() {
         apiService.getCharacters().enqueue(new Callback<Characters>() {
+            @Override
+            public void onResponse(Call<Characters> call, Response<Characters> response) {
+                if (response.isSuccessful()) {
+                    characterList.clear();
+                    characterList.addAll(response.body().getResults());
+                    characterAdapter.notifyDataSetChanged();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Characters> call, Throwable t) {
+
+            }
+        });
+    }
+
+    private void getCharacters(String query) {
+        apiService.getCharacters(query).enqueue(new Callback<Characters>() {
             @Override
             public void onResponse(Call<Characters> call, Response<Characters> response) {
                 if (response.isSuccessful()) {

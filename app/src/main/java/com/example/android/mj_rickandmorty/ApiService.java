@@ -4,12 +4,13 @@ import com.example.android.mj_rickandmorty.models.Characters;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Query;
 
 public interface ApiService {
 
     @GET("character")
     Call<Characters> getCharacters();
 
-    @GET("character/{name}")
-    Call<Characters> getCharactersByQuery(String name);
+    @GET("character")
+    Call<Characters> getCharacters(@Query("name") String name);
 }
