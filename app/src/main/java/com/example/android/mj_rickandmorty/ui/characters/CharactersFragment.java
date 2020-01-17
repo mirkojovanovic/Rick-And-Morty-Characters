@@ -1,0 +1,79 @@
+package com.example.android.mj_rickandmorty.ui.characters;
+
+import androidx.lifecycle.ViewModelProviders;
+
+import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.android.mj_rickandmorty.CharacterAdapter;
+import com.example.android.mj_rickandmorty.R;
+import com.example.android.mj_rickandmorty.models.Character;
+import com.example.android.mj_rickandmorty.models.Characters;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+import static com.example.android.mj_rickandmorty.ApiClient.apiService;
+
+public class CharactersFragment extends Fragment {
+
+    private CharactersViewModel mViewModel;
+    private CharacterAdapter characterAdapter;
+    private List<Character> characterList = new ArrayList<>();
+
+    public static CharactersFragment newInstance() {
+        return new CharactersFragment();
+    }
+
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.characters_fragment, container, false);
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        mViewModel = ViewModelProviders.of(this).get(CharactersViewModel.class);
+        // TODO: Use the ViewModel
+
+        RecyclerView charactersRecyclerView = getView().findViewById(R.id.characters_rv);
+        characterAdapter = new CharacterAdapter(getContext(), characterList);
+        charactersRecyclerView.setAdapter(characterAdapter);
+        charactersRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(),
+                LinearLayoutManager.VERTICAL, false));
+
+        apiService.getCharacters().enqueue(new Callback<Characters>() {
+            @Override
+            public void onResponse(Call<Characters> call, Response<Characters> response) {
+                if(response.isSuccessful()) {
+                    characterList.clear();
+                    characterList.addAll(response.body().getResults());
+                    characterAdapter.notifyDataSetChanged();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Characters> call, Throwable t) {
+
+            }
+        });
+    }
+
+}
