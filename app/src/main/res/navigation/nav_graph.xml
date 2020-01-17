@@ -9,18 +9,18 @@
         android:id="@+id/action_characters"
         android:name="com.example.android.mj_rickandmorty.ui.characters.CharactersFragment"
         android:label="@string/characters"
-        tools:layout="@layout/characters_fragment"/>
+        tools:layout="@layout/characters_fragment" />
 
     <fragment
         android:id="@+id/action_episodes"
         android:name="com.example.android.mj_rickandmorty.ui.episodes.EpisodesFragment"
         android:label="@string/episodes"
-        tools:layout="@layout/episodes_fragment"/>
+        tools:layout="@layout/episodes_fragment" />
 
     <fragment
         android:id="@+id/action_locations"
         android:name="com.example.android.mj_rickandmorty.ui.locations.LocationsFragment"
         android:label="@string/locations"
-        tools:layout="@layout/locations_fragment"/>
+        tools:layout="@layout/locations_fragment" />
 
 </navigation>

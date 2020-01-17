@@ -3,15 +3,15 @@
     <item
         android:id="@+id/action_characters"
         android:icon="@drawable/rick_icon"
-        android:title="@string/characters"/>
+        android:title="@string/characters" />
 
     <item
         android:id="@+id/action_episodes"
         android:icon="@drawable/play_icon"
-        android:title="@string/episodes"/>
+        android:title="@string/episodes" />
 
     <item
         android:id="@+id/action_locations"
         android:icon="@drawable/location_icon"
-        android:title="@string/locations"/>
+        android:title="@string/locations" />
 </menu>

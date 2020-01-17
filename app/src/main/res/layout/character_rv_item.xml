@@ -23,6 +23,6 @@
         android:gravity="end"
         app:layout_constraintLeft_toRightOf="@+id/thumb_image_view"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

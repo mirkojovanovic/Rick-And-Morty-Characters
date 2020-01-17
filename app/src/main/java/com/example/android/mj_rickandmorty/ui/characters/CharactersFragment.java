@@ -1,21 +1,16 @@
 package com.example.android.mj_rickandmorty.ui.characters;
 
-import androidx.lifecycle.ViewModelProviders;
-
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.android.mj_rickandmorty.CharacterAdapter;
 import com.example.android.mj_rickandmorty.R;
@@ -62,7 +57,7 @@ public class CharactersFragment extends Fragment {
         apiService.getCharacters().enqueue(new Callback<Characters>() {
             @Override
             public void onResponse(Call<Characters> call, Response<Characters> response) {
-                if(response.isSuccessful()) {
+                if (response.isSuccessful()) {
                     characterList.clear();
                     characterList.addAll(response.body().getResults());
                     characterAdapter.notifyDataSetChanged();
