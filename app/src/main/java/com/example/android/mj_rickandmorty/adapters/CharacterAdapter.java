@@ -1,4 +1,4 @@
-package com.example.android.mj_rickandmorty;
+package com.example.android.mj_rickandmorty.adapters;
 
 
 import android.content.Context;
@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.android.mj_rickandmorty.R;
 import com.example.android.mj_rickandmorty.models.Character;
 
 import java.util.List;

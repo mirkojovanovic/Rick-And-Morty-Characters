@@ -4,4 +4,7 @@
     <string name="episodes">Episodes</string>
     <string name="locations">Locations</string>
     <string name="characters_search_view_hint">Search for characters</string>
+    <string name="episode_heading_name">Name</string>
+    <string name="episode_heading_airing_date">Airing Date</string>
+    <string name="episode_heading_episode_number">Ep. Num</string>
 </resources>

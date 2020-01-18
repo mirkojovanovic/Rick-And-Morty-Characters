@@ -7,17 +7,10 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
-import com.example.android.mj_rickandmorty.CharacterAdapter;
 import com.example.android.mj_rickandmorty.R;
-import com.example.android.mj_rickandmorty.models.Character;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import java.util.List;
-
 public class MainActivity extends AppCompatActivity {
-
-    private List<Character> characterList;
-    public CharacterAdapter characterAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

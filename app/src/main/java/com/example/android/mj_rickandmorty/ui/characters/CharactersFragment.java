@@ -13,7 +13,7 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.android.mj_rickandmorty.CharacterAdapter;
+import com.example.android.mj_rickandmorty.adapters.CharacterAdapter;
 import com.example.android.mj_rickandmorty.R;
 import com.example.android.mj_rickandmorty.models.Character;
 import com.example.android.mj_rickandmorty.models.Characters;
@@ -68,7 +68,7 @@ public class CharactersFragment extends Fragment {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                //getCharacters(newText);
+                getCharacters(newText);
                 return false;
             }
         });
