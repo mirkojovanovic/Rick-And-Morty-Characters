@@ -62,9 +62,10 @@ public class EpisodesFragment extends Fragment {
             @Override
             public void onResponse(Call<Episodes> call, Response<Episodes> response) {
                 if (response.isSuccessful()) {
-                    episodeList.clear();
-                    episodeList.addAll(response.body().getResults());
-                    episodeAdapter.notifyDataSetChanged();
+                    if (episodeList.size() == 0) {
+                        episodeList.addAll(response.body().getResults());
+                        episodeAdapter.notifyDataSetChanged();
+                    }
                 }
             }
 
