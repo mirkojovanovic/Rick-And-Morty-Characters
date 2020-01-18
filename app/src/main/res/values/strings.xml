@@ -7,4 +7,6 @@
     <string name="episode_heading_name">Name</string>
     <string name="episode_heading_airing_date">Airing Date</string>
     <string name="episode_heading_episode_number">Ep. Num</string>
+    <string name="species_property"><![CDATA[<b>Species</b>: %s]]></string>
+    <string name="gender_property"><![CDATA[<b>Gender</b>: %s]]></string>
 </resources>

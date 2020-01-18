@@ -44,7 +44,7 @@ public class EpisodeAdapter extends RecyclerView.Adapter<EpisodeAdapter.ViewHold
 
     @Override
     public int getItemCount() {
-        return episodeList.size();
+        return episodeList == null ? 0 : episodeList.size();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {

@@ -7,6 +7,7 @@ public class Episode {
     private String airDate;
     private String name;
     private String episode;
+    private int id;
 
     public void setAirDate(String airDate) {
         this.airDate = airDate;
@@ -30,5 +31,14 @@ public class Episode {
 
     public String getEpisode() {
         return episode;
+    }
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
