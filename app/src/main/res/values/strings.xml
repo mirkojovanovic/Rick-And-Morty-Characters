@@ -9,4 +9,5 @@
     <string name="episode_heading_episode_number">Ep. Num</string>
     <string name="species_property"><![CDATA[<b>Species</b>: %s]]></string>
     <string name="gender_property"><![CDATA[<b>Gender</b>: %s]]></string>
+    <string name="map_key" translatable="false">AIzaSyDkhEeN6gvykM6eARy0ruXyHErL-FCd8OM</string>
 </resources>
