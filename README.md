@@ -16,12 +16,11 @@ There is also an integration of google maps.
   - episodes
 - **season/episode** list with airing dates
 
+### Screenshots
 
-![List of characters, and search bar](http://ix.io/28IC)
-
-![Preview of character information](http://ix.io/28ID)
-
-![Season and episode list](http://ix.io/28IE)
+[List of characters, and search bar](http://ix.io/28Gc)
+[Preview of character information](http://ix.io/28Ge)
+[Season and episode list](http://ix.io/28Gd)
 
 ## Technical background
 
