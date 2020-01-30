@@ -19,7 +19,9 @@ There is also an integration of google maps.
 ### Screenshots
 
 [List of characters, and search bar](http://ix.io/28Gc)
+
 [Preview of character information](http://ix.io/28Ge)
+
 [Season and episode list](http://ix.io/28Gd)
 
 ## Technical background
